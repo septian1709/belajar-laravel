@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sk', function(){
-    return view('ekstra');
-});
+/*Route::get('/article', 'App\Http\Controllers\ArticleController@index');*/
+/*Maksudnya route article akan memanggil controller ArticleController fungsi index*/
+
+Route::get('/article', [ArticleController::class, 'index']);
+/*cara lain menulis route controller*/
